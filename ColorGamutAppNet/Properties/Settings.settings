@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ColorGamutAppNet.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="S_R_X" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.68</Value>
+    </Setting>
+    <Setting Name="S_R_Y" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.32</Value>
+    </Setting>
+    <Setting Name="S_G_X" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.265</Value>
+    </Setting>
+    <Setting Name="S_G_Y" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.69</Value>
+    </Setting>
+    <Setting Name="S_B_X" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.15</Value>
+    </Setting>
+    <Setting Name="S_B_Y" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.06</Value>
+    </Setting>
+    <Setting Name="T_R_X" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="T_R_Y" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="T_G_X" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="T_G_Y" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="T_B_X" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="T_B_Y" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

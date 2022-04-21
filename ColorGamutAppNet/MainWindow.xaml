@@ -1,0 +1,87 @@
+﻿<hc:GlowWindow x:Class="ColorGamutAppNet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ColorGamutAppNet"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        mc:Ignorable="d"
+         Icon="favicon.ico"
+        Title="色域覆盖率计算工具" Height="600" WindowStartupLocation="CenterScreen" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <GroupBox Margin="5" Header="计算结果：" Style="{StaticResource GroupBoxOriginal}">
+            <Grid VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Left" x:Name="txt_standArea" Margin="10" Foreground="{StaticResource DarkInfoBrush}" Style="{StaticResource TextBlockSubTitleBold}"/>
+                <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" x:Name="txt_testArea" Margin="10" Foreground="{StaticResource DarkSuccessBrush}" Style="{StaticResource TextBlockSubTitleBold}"/>
+                <TextBlock HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" x:Name="txt_GamutCoverageArea" Margin="10" Foreground="{StaticResource DarkSuccessBrush}" Style="{StaticResource TextBlockSubTitleBold}"/>
+
+                <TextBlock HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" x:Name="txt_GamutCoverage" Margin="10" Foreground="{StaticResource DarkSuccessBrush}" Style="{StaticResource TextBlockSubTitleBold}"/>
+            </Grid>
+
+        </GroupBox>
+        <GroupBox Grid.Row="1" Margin="5" Header="标准色域值：" Style="{StaticResource GroupBoxOriginal}">
+            <Grid VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Margin="5">
+                    <hc:NumericUpDown Name="stand_R_X" Minimum="0" Value="0.68" Margin="0.,5" DecimalPlaces="4" hc:TitleElement.Title="R_X:" Style="{StaticResource NumericUpDownPlus}"/>
+                    <hc:NumericUpDown Name="stand_R_Y" Minimum="0" Value="0.32" Margin="0.,5" DecimalPlaces="4" hc:TitleElement.Title="R_Y:" Style="{StaticResource NumericUpDownPlus}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="5">
+                    <hc:NumericUpDown Name="stand_G_X" Minimum="0" Value="0.265" Margin="0.,5" DecimalPlaces="4" hc:TitleElement.Title="G_X:" Style="{StaticResource NumericUpDownPlus}"/>
+                    <hc:NumericUpDown Name="stand_G_Y" Minimum="0" Value="0.69" Margin="0.,5" DecimalPlaces="4" hc:TitleElement.Title="G_Y:" Style="{StaticResource NumericUpDownPlus}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Margin="5">
+                    <hc:NumericUpDown Name="stand_B_X" Minimum="0" Value="0.15" Margin="0.,5" DecimalPlaces="4" hc:TitleElement.Title="B_X:" Style="{StaticResource NumericUpDownPlus}"/>
+                    <hc:NumericUpDown Name="stand_B_Y" Minimum="0" Value="0.06" Margin="0.,5" DecimalPlaces="4" hc:TitleElement.Title="B_Y:" Style="{StaticResource NumericUpDownPlus}"/>
+                </StackPanel>
+            </Grid>
+
+        </GroupBox>
+        <GroupBox Grid.Row="2" Margin="5" Header="测试色域值：" Style="{StaticResource GroupBoxOriginal}">
+            <Grid VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Margin="5">
+                    <hc:NumericUpDown Name="test_R_X" Minimum="0" Margin="0.,5" DecimalPlaces="4" hc:TitleElement.Title="R_X:" Style="{StaticResource NumericUpDownPlus}"/>
+                    <hc:NumericUpDown Name="test_R_Y" Minimum="0" Margin="0.,5" DecimalPlaces="4" hc:TitleElement.Title="R_Y:" Style="{StaticResource NumericUpDownPlus}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="5">
+                    <hc:NumericUpDown Name="test_G_X" Minimum="0" Margin="0.,5" DecimalPlaces="4" hc:TitleElement.Title="G_X:" Style="{StaticResource NumericUpDownPlus}"/>
+                    <hc:NumericUpDown Name="test_G_Y" Minimum="0" Margin="0.,5" DecimalPlaces="4" hc:TitleElement.Title="G_Y:" Style="{StaticResource NumericUpDownPlus}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Margin="5">
+                    <hc:NumericUpDown Name="test_B_X" Minimum="0" Margin="0.,5" DecimalPlaces="4" hc:TitleElement.Title="B_X:" Style="{StaticResource NumericUpDownPlus}"/>
+                    <hc:NumericUpDown Name="test_B_Y" Minimum="0" Margin="0.,5" DecimalPlaces="4" hc:TitleElement.Title="B_Y:" Style="{StaticResource NumericUpDownPlus}"/>
+                </StackPanel>
+            </Grid>
+
+        </GroupBox>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,40,0">
+            <Button Name="btn_openImage" IsEnabled="False" Click="btn_openImage_Click" Padding="30,0"  Content="图像显示"/>
+
+            <Button Grid.Row="3" Name="btn_compute" Click="btn_compute_Click" Padding="30,0" HorizontalAlignment="Right" Margin="20,0" Content="计算"/>
+        </StackPanel>
+        
+    </Grid>
+</hc:GlowWindow>
